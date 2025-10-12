@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HITL Private Limited – Internship Programs</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+  }
+
+  header {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+  }
+
+  .company-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF0000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .company-subtext {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #FFD700;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+  }
+
+  #studentCount {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FFD700;
+    transition: color 0.3s;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .intro-text {
+    max-width: 850px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #f1f1f1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 25px;
+    border-left: 4px solid #FFD700;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+  }
+
+  .intro-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+    text-align: left;
+    display: inline-block;
+  }
+
+  .intro-text ul li::before {
+    content: "🔹";
+    margin-right: 6px;
+    color: #FFD700;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6);
+  }
+
+  .card h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #FFD700;
+    font-weight: bold;
+  }
+
+  .card ul {
+    padding-left: 18px;
+    margin: 0;
+  }
+
+  .card ul li {
+    margin-bottom: 5px;
+  }
+
+  .price {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #00ffcc;
+    margin: 10px 0;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s, transform 0.2s;
+    text-align: center;
+    flex: 1;
+    margin: 5px;
+  }
+
+  .register-btn {
+    background: #007BFF;
+  }
+
+  .register-btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+
+  .whatsapp-btn {
+    background: #25D366;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1ebe5c;
+    transform: scale(1.05);
+  }
+
+  .upload-btn {
+    background: #FF4500;
+  }
+
+  .upload-btn:hover {
+    background: #cc3700;
+    transform: scale(1.05);
+  }
+
+  .pay-btn {
+    background: #FFD700;
+    color: black;
+  }
+
+  .pay-btn:hover {
+    background: #e6c200;
+    transform: scale(1.05);
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background: #111;
+    font-size: 0.95rem;
+    color: #FFD700;
+    box-shadow: 0 -4px 15px rgba(255, 215, 0, 0.3);
+  }
+
+  .socials a {
+    color: #00FFCC;
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+  }
+
+  .socials a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .container {
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    .card {
+      width: 45%;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .card {
+      width: 90%;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="company-name">HITL PRIVATE LIMITED</div>
+    <div class="company-subtext">
+      An ISO 9001:2015 Certified Organization <br>
+      Regd. under Ministry of MSME, Govt. of India
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><span id="studentCount" class="number">1000</span>+ Students Enrolled</div>
+      <div class="stat">📡 Live Classes by Industry Experts</div>
+      <div class="stat">👨‍🏫 Mentors 6+ Years Experience</div>
+    </div>
+  </header>
+
+  <!-- PAID INTERNSHIPS -->
+  <div class="section-heading">Paid Internship Programs</div>
+
+  <div class="intro-text">
+    <p><strong>Gain real-world experience with our 2-Month Internship & Live Project Bootcamp!</strong><br>
+    Designed for <b>Degree, B.Tech, and MBA students</b> to enhance skills, work on live projects, and develop professional expertise.</p>
+    <ul>
+      <li>Internship Fee: ₹4499/- per domain</li>
+      <li>Registration Fee: ₹1299/- upfront</li>
+      <li>You will get <strong>Certified Internship Certificate</strong></li>
+      <li>Resume & Profile Building Sessions</li>
+      <li>Mock Interviews with Industry Mentors</li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <!-- Paid Internship Cards in Rows of 3 -->
+    <div class="card">
+      <h2>Python</h2>
+      <ul>
+        <li>Core Python Concepts</li>
+        <li>2-Month Live Project Bootcamp</li>
+        <li>Resume & Profile Building</li>
+        <li>Mock Interviews + Certificate</li>
+      </ul>
+      <div class="price">Internship Fee: ₹3499/- | Register NOW: ₹1299/-</div>
+      <div class="buttons">
+        <a class="btn register-btn" href="https://forms.gle/TUpEko64zHshUP1r6" target="_blank">Register</a>
+        <a class="btn whatsapp-btn" href="https://wa.me/919553650061" target="_blank">WhatsApp</a>
+        <a class="btn pay-btn" href="upi://pay?pa=hitlpayment@ibl&pn=HITL+Private+Limited&cu=INR&am=1299" target="_blank">Pay Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Full Stack</h2>
+      <ul>
+        <li>Front-end + Back-end Development</li>
+        <li>2-Month Live Project Bootcamp</li>
+        <li>Resume & Profile Building</li>
+        <li>Mock Interviews + Certificate</li>
+      </ul>
+      <div class="price">Internship Fee: ₹4499/- | Register NOW: ₹1299/-</div>
+      <div class="buttons">
+        <a class="btn register-btn" href="https://forms.gle/TUpEko64zHshUP1r6" target="_blank">Register</a>
+        <a class="btn whatsapp-btn" href="https://wa.me/919553650061" target="_blank">WhatsApp</a>
+        <a class="btn pay-btn" href="upi://pay?pa=hitlpayment@ibl&pn=HITL+Private+Limited&cu=INR&am=1299" target="_blank">Pay Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Data Analysis</h2>
+      <ul>
+        <li>Excel, SQL, Data Visualization</li>
+        <li>2-Month Live Project Bootcamp</li>
+        <li>Resume & Profile Building</li>
+        <li>Mock Interviews + Certificate</li>
+      </ul>
+      <div class="price">Internship Fee: ₹4499/- | Register NOW: ₹1299/-</div>
+      <div class="buttons">
+        <a class="btn register-btn" href="https://forms.gle/TUpEko64zHshUP1r6" target="_blank">Register</a>
+        <a class="btn whatsapp-btn" href="https://wa.me/919553650061" target="_blank">WhatsApp</a>
+        <a class="btn pay-btn" href="upi://pay?pa=hitlpayment@ibl&pn=HITL+Private+Limited&cu=INR&am=1299" target="_blank">Pay Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Web Development</h2>
+      <ul>
+        <li>HTML, CSS, JS, React</li>
+        <li>2-Month Live Project Bootcamp</li>
+        <li>Resume & Profile Building</li>
+        <li>Mock Interviews + Certificate</li>
+      </ul>
+      <div class="price">Internship Fee: ₹4499/- | Register NOW: ₹1299/-</div>
+      <div class="buttons">
+        <a class="btn register-btn" href="https://forms.gle/TUpEko64zHshUP1r6" target="_blank">Register</a>
+        <a class="btn whatsapp-btn" href="https://wa.me/919553650061" target="_blank">WhatsApp</a>
+        <a class="btn pay-btn" href="upi://pay?pa=hitlpayment@ibl&pn=HITL+Private+Limited&cu=INR&am=1299" target="_blank">Pay Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>AIML</h2>
+      <ul>
+        <li>AI & ML Algorithms</li>
+        <li>2-Month Live Project Bootcamp</li>
+        <li>Resume & Profile Building</li>
+        <li>Mock Interviews + Certificate</li>
+      </ul>
+      <div class="price">Internship Fee: ₹4499/- | Register NOW: ₹1299/-</div>
+      <div class="buttons">
+        <a class="btn register-btn" href="https://forms.gle/TUpEko64zHshUP1r6" target="_blank">Register</a>
+        <a class="btn whatsapp-btn" href="https://wa.me/919553650061" target="_blank">WhatsApp</a>
+        <a class="btn pay-btn" href="upi://pay?pa=hitlpayment@ibl&pn=HITL+Private+Limited&cu=INR&am=1299" target="_blank">Pay Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Embedded Systems</h2>
+      <ul>
+        <li>Microcontrollers & IoT</li>
+        <li>2-Month Live Project Bootcamp</li>
+        <li>Resume & Profile Building</li>
+        <li>Mock Interviews + Certificate</li>
+      </ul>
+      <div class="price">Internship Fee: ₹4499/- | Register NOW: ₹1299/-</div>
+      <div class="buttons">
+        <a class="btn register-btn" href="https://forms.gle/TUpEko64zHshUP1r6" target="_blank">Register</a>
+        <a class="btn whatsapp-btn" href="https://wa.me/919553650061" target="_blank">WhatsApp</a>
+        <a class="btn pay-btn" href="upi://pay?pa=hitlpayment@ibl&pn=HITL+Private+Limited&cu=INR&am=1299" target="_blank">Pay Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Robotics</h2>
+      <ul>
+        <li>Robotics Design & Automation</li>
+        <li>2-Month Live Project Bootcamp</li>
+        <li>Resume & Profile Building</li>
+        <li>Mock Interviews + Certificate</li>
+      </ul>
+      <div class="price">Internship Fee: ₹6499/- | Register NOW: ₹1999/-</div>
+      <div class="buttons">
+        <a class="btn register-btn" href="https://forms.gle/TUpEko64zHshUP1r6" target="_blank">Register</a>
+        <a class="btn whatsapp-btn" href="https://wa.me/919553650061" target="_blank">WhatsApp</a>
+        <a class="btn pay-btn" href="upi://pay?pa=hitlpayment@ibl&pn=HITL+Private+Limited&cu=INR&am=1999" target="_blank">Pay Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STIPEND-BASED INTERNSHIPS -->
+  <div class="section-heading">Stipend-Based Internship Programs</div>
+
+  <div class="intro-text">
+    <p><strong>Exclusive Stipend-Based Internships</strong> – Work 2 days/week from office, sincere work expected. After 3 months, top performers may be hired as permanent employees at HITL.</p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Digital Marketing</h2>
+      <ul>
+        <li>Work on real campaigns</li>
+        <li>Weekly guidance and performance review</li>
+        <li>Stipend: ₹5,000 - ₹15,000 (performance-based)</li>
+        <li>Resume & Profile Building</li>
+        <li>Upload your resume to apply directly</li>
+      </ul>
+      <div class="buttons">
+        <a class="btn upload-btn" href="mailto:info.hitl.hyd@gmail.com?subject=Digital Marketing Internship Resume">Upload Resume</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Video Editor</h2>
+      <ul>
+        <li>Work on real video projects</li>
+        <li>Weekly guidance and performance review</li>
+        <li>Stipend: ₹5,000 - ₹15,000 (performance-based)</li>
+        <li>Resume & Profile Building</li>
+        <li>Upload your resume to apply directly</li>
+      </ul>
+      <div class="buttons">
+        <a class="btn upload-btn" href="mailto:info.hitl.hyd@gmail.com?subject=Video Editor Internship Resume">Upload Resume</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Content Moderator</h2>
+      <ul>
+        <li>Work on creative projects</li>
+        <li>Weekly guidance and performance review</li>
+        <li>Stipend: ₹5,000 - ₹15,000 (performance-based)</li>
+        <li>Resume & Profile Building</li>
+        <li>Upload your resume to apply directly</li>
+      </ul>
+      <div class="buttons">
+        <a class="btn upload-btn" href="mailto:info.hitl.hyd@gmail.com?subject=Content Creator Internship Resume">Upload Resume</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Business Development Associate</h2>
+      <ul>
+        <li>Assist business strategies</li>
+        <li>Weekly guidance and performance review</li>
+        <li>Stipend: ₹5,000 - ₹15,000 (performance-based)</li>
+        <li>Resume & Profile Building</li>
+        <li>Upload your resume to apply directly</li>
+      </ul>
+      <div class="buttons">
+        <a class="btn upload-btn" href="mailto:info.hitl.hyd@gmail.com?subject=Business Development Associate Internship Resume">Upload Resume</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>📧 info.hitl.hyd@gmail.com | 📞 9553650061 | 🌐 
+      <a href="https://www.hitl.co.in" target="_blank">www.hitl.co.in</a></p>
+    <div class="socials">
+      <a href="https://www.instagram.com/hitl.hyd/" target="_blank">Instagram</a> |
+      <a href="https://www.linkedin.com/company/hitl-hyd/" target="_blank">LinkedIn</a> |
+      <a href="https://www.youtube.com/@hitlprojects" target="_blank">YouTube</a> |
+      <a href="https://wa.me/919553650061" target="_blank">WhatsApp</a>
+    </div>
+    <p>© 2025 HITL Private Limited | Certified Internship Programs</p>
+  </footer>
+
+  <script>
+    let count = 1000;
+    const target = 5700;
+    const counter = document.getElementById('studentCount');
+    const colors = ['#FFD700', '#00FFCC', '#FF69B4', '#ADFF2F', '#FFA500'];
+    const interval = setInterval(() => {
+      count += Math.floor(Math.random() * 25) + 5;
+      if (count >= target) {
+        count = target;
+        clearInterval(interval);
+      }
+      counter.textContent = count;
+      counter.style.color = colors[Math.floor(Math.random() * colors.length)];
+    }, 80);
+  </script>
+
+</body>
+</html>
